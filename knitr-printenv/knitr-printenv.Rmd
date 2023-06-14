@@ -1,0 +1,16 @@
+---
+title: knitr-printenv
+---
+
+```{r}
+knitr::knit_hooks$set(debug = function(before, options, envir) {
+  if (!before) {
+   cat(paste0(names(Sys.getenv()), "=", Sys.getenv(), collapse = "\n"))
+  }
+})
+
+```
+
+```{r printenv, debug = TRUE}
+ls()
+```
