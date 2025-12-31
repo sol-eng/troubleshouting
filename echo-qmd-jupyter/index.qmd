@@ -1,0 +1,28 @@
+---
+title: "Environment Variables Echo - Quarto with Jupyter"
+format: html
+engine: jupyter
+---
+
+## CONNECT Environment Variables
+
+```{python}
+import os
+from datetime import datetime
+
+# Get all environment variables starting with CONNECT_
+connect_vars = {key: value for key, value in os.environ.items() if key.startswith('CONNECT_')}
+
+if connect_vars:
+    print("Environment variables starting with CONNECT_:\n")
+    for key, value in sorted(connect_vars.items()):
+        print(f"{key}={value}")
+else:
+    print("No environment variables starting with CONNECT_ found.")
+```
+
+## Current Time
+
+```{python}
+print(f"Current time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S %Z')}")
+```

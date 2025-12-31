@@ -1,0 +1,31 @@
+---
+title: "Environment Variables Echo - R Markdown"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## CONNECT Environment Variables
+
+```{r}
+# Get all environment variables starting with CONNECT_
+connect_vars <- Sys.getenv()
+connect_vars <- connect_vars[grep("^CONNECT_", names(connect_vars))]
+
+if (length(connect_vars) > 0) {
+  cat("Environment variables starting with CONNECT_:\n\n")
+  for (var_name in names(connect_vars)) {
+    cat(sprintf("%s=%s\n", var_name, connect_vars[[var_name]]))
+  }
+} else {
+  cat("No environment variables starting with CONNECT_ found.\n")
+}
+```
+
+## Current Time
+
+```{r}
+cat("Current time:", format(Sys.time(), "%Y-%m-%d %H:%M:%S %Z"), "\n")
+```

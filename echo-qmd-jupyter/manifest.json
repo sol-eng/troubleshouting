@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "locale": "en_US.UTF-8",
+  "metadata": {
+    "appmode": "quarto-static"
+  },
+  "quarto": {
+    "version": "1.6.43",
+    "engines": [
+      "jupyter"
+    ]
+  },
+  "python": {
+    "version": "3.12.6",
+    "package_manager": {
+      "name": "pip",
+      "version": "25.3",
+      "package_file": "requirements.txt"
+    }
+  },
+  "files": {
+    "requirements.txt": {
+      "checksum": "9f3bc30808fbfc0f66de387d576a093d"
+    },
+    "index.qmd": {
+      "checksum": "0d646d2b3fe659bf28be297a6a1a5475"
+    }
+  }
+}
